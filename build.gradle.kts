@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import me.champeau.jmh.JmhBytecodeGeneratorTask
 
 plugins {
@@ -45,5 +44,6 @@ tasks.withType<JmhBytecodeGeneratorTask> {
 jmh {
     humanOutputFile = project.file("${project.rootDir}/reports/jmh/human.txt")
     resultsFile = project.file("${project.rootDir}/reports/jmh/results.txt")
-    jvmArgsPrepend.addAll("--enable-preview")
+    jvmArgsPrepend = listOf("--enable-preview")
+    benchmarkMode = listOf("avgt")
 }
