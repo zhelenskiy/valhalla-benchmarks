@@ -157,7 +157,7 @@ public class StatesQ128int extends SizeBase {
         }
     }
 
-    public static class Val_as_By extends StatesQ32int.ByState {
+    public static class Val_as_By extends ByState {
         @Setup
         public void setup() {
             arr = new Q128int[size];
@@ -165,7 +165,7 @@ public class StatesQ128int extends SizeBase {
         }
     }
 
-    public static class Ref_as_By extends StatesQ32int.ByState {
+    public static class Ref_as_By extends ByState {
         @Setup
         public void setup() {
             arr = new Q128int[size];
@@ -173,7 +173,7 @@ public class StatesQ128int extends SizeBase {
         }
     }
 
-    public static class By_as_By extends StatesQ32int.ByState {
+    public static class By_as_By extends ByState {
         @Setup
         public void setup() {
             arr = new ByInt[size];

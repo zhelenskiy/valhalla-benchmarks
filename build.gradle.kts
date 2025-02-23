@@ -2,7 +2,7 @@ import me.champeau.jmh.JmhBytecodeGeneratorTask
 
 plugins {
     java
-    kotlin("jvm") version "2.1.255-SNAPSHOT"
+    kotlin("jvm") version "2.2.255-SNAPSHOT"
     id("me.champeau.jmh") version "0.7.2"
 }
 
@@ -43,7 +43,9 @@ tasks.withType<JmhBytecodeGeneratorTask> {
 
 jmh {
     humanOutputFile = project.file("${project.rootDir}/reports/jmh/human.txt")
-    resultsFile = project.file("${project.rootDir}/reports/jmh/results.txt")
+    resultsFile = project.file("${project.rootDir}/reports/jmh/results.csv")
     jvmArgsPrepend = listOf("--enable-preview")
     benchmarkMode = listOf("avgt")
+    resultFormat = "CSV"
+    warmupIterations = 3
 }
